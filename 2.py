@@ -28,9 +28,3 @@ def _build_sam(
     image_size = 1024
     vit_patch_size = 16
     image_embedding_size = image_size // vit_patch_size
-    sam = Sam(
-        image_encoder=ImageEncoderViT(
-            depth=encoder_depth,
-            embed_dim=encoder_embed_dim,
-            img_size=image_size,
-            mlp_ratio=4,
