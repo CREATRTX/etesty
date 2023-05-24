@@ -47,22 +47,3 @@ def truncate_class_name(class_name: str) -> str:
 
     return string_mapper[class_name]
 
-
-def render_histogram(nusc: NuScenes,
-                     sort_by: str = 'count_desc',
-                     verbose: bool = True,
-                     font_size: int = 20,
-                     save_as_img_name: str = None) -> None:
-    """
-    Render two histograms for the given nuScenes split. The top histogram depicts the number of scan-wise instances
-    for each class, while the bottom histogram depicts the number of points for each class.
-    :param nusc: A nuScenes object.
-    :param sort_by: How to sort the classes to display in the plot (note that the x-axis, where the class names will be
-        displayed on, is shared by the two histograms):
-        - count_desc: Sort the classes by the number of points belonging to each class, in descending order.
-        - count_asc: Sort the classes by the number of points belonging to each class, in ascending order.
-        - name: Sort the classes by alphabetical order.
-        - index: Sort the classes by their indices.
-    :param verbose: Whether to display the plot in a window after rendering.
-    :param font_size: Size of the font to use for the plot.
-    :param save_as_img_name: Path (including image name and extension) to save the plot as.
